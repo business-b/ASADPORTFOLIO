@@ -1,222 +1,456 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Asad Iqbal – Banking Professional Portfolio</title>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asad Iqbal | Banking Professional Portfolio</title>
+<meta name="description" content="Portfolio of Asad Iqbal – National Bank of Pakistan, Assistant to Manager. 20+ years of banking experience.">
 <style>
-:root{--bg:#070d1c;--bg2:#0d1730;--card:rgba(255,255,255,.05);--line:rgba(255,255,255,.12);--tx:#e8edf7;--mut:#9aa7c2;--gold:#d4af37;--gold2:#f2d680;--teal:#2dd4bf}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:radial-gradient(1200px 700px at 80% -10%,#16264d,transparent),var(--bg);color:var(--tx);overflow-x:hidden;line-height:1.6}
-#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
-section,footer,header{position:relative;z-index:1}
-.wrap{max-width:1050px;margin:auto;padding:90px 22px 30px}
-h2{font-size:2rem;margin-bottom:6px;color:#fff}h2 span{color:var(--gold)}
-.sub{color:var(--mut);margin-bottom:30px}
-/* menu */
-#burger{position:fixed;top:18px;left:18px;z-index:50;width:50px;height:50px;border-radius:14px;border:1px solid var(--line);background:rgba(13,23,48,.85);backdrop-filter:blur(8px);cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;transition:.3s}
-#burger:hover{border-color:var(--gold);transform:scale(1.08) rotate(-4deg)}
-#burger i{display:block;width:24px;height:3px;background:var(--gold);border-radius:3px;transition:.3s}
-#burger.on i:nth-child(1){transform:translateY(9px) rotate(45deg)}#burger.on i:nth-child(2){opacity:0}#burger.on i:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
-#drawer{position:fixed;top:0;left:0;bottom:0;width:270px;z-index:45;padding:90px 18px 20px;background:linear-gradient(180deg,#0d1730,#070d1c);border-right:1px solid var(--line);transform:translateX(-105%);transition:.45s cubic-bezier(.2,.8,.2,1)}
-#drawer.on{transform:none}
-#drawer button{display:flex;align-items:center;gap:12px;width:100%;padding:15px 16px;margin-bottom:12px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--tx);font-size:1rem;cursor:pointer;transition:.25s;text-align:left}
-#drawer button:hover{border-color:var(--gold);transform:translateX(8px) translateZ(0);background:rgba(212,175,55,.1)}
-#drawer em{font-style:normal;font-size:1.2rem}
-/* hero */
-#hero{min-height:100vh;display:grid;grid-template-columns:1fr;text-align:center;align-items:center;gap:30px;max-width:1100px;margin:auto;padding:90px 24px 40px}
-.tag{display:inline-block;padding:6px 16px;border:1px solid var(--gold);color:var(--gold2);border-radius:30px;font-size:.85rem;letter-spacing:1px;margin-bottom:18px}
-#hero h1{font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.05;background:linear-gradient(90deg,#fff,var(--gold2),var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200%;animation:sh 6s linear infinite}
-@keyframes sh{to{background-position:200%}}
-#hero p{color:var(--mut);margin:18px auto 26px;max-width:520px;font-size:1.05rem}
-.btn{display:inline-block;padding:13px 28px;border-radius:30px;background:linear-gradient(135deg,var(--gold),#a98414);color:#0a1020;font-weight:700;text-decoration:none;border:0;cursor:pointer;margin:0 10px 10px 0;transition:.3s;box-shadow:0 8px 26px rgba(212,175,55,.3)}
-.btn:hover{transform:translateY(-4px) scale(1.04)}.btn.o{background:transparent;color:var(--tx);border:1px solid var(--line);box-shadow:none}
-/* 3D scene */
-.scene{perspective:900px;height:380px;display:flex;align-items:center;justify-content:center}
-.cube{width:170px;height:170px;position:relative;transform-style:preserve-3d;animation:spin 18s linear infinite}
-.scene:hover .cube{animation-play-state:paused}
-.cube div{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2.4rem;font-weight:800;color:var(--gold2);border:2px solid var(--gold);background:linear-gradient(135deg,rgba(212,175,55,.18),rgba(45,212,191,.12));backdrop-filter:blur(3px);box-shadow:inset 0 0 30px rgba(212,175,55,.25)}
-.cube div:nth-child(1){transform:translateZ(85px)}.cube div:nth-child(2){transform:rotateY(90deg) translateZ(85px)}.cube div:nth-child(3){transform:rotateY(180deg) translateZ(85px)}.cube div:nth-child(4){transform:rotateY(-90deg) translateZ(85px)}.cube div:nth-child(5){transform:rotateX(90deg) translateZ(85px)}.cube div:nth-child(6){transform:rotateX(-90deg) translateZ(85px)}
-.ring{position:absolute;width:300px;height:300px;border:2px dashed rgba(45,212,191,.5);border-radius:50%;transform-style:preserve-3d;animation:rg 10s linear infinite}
-@keyframes spin{to{transform:rotateX(360deg) rotateY(360deg)}}@keyframes rg{from{transform:rotateX(70deg) rotateZ(0)}to{transform:rotateX(70deg) rotateZ(360deg)}}
-/* cards */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;perspective:1000px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;transition:transform .15s,border-color .3s;transform-style:preserve-3d;backdrop-filter:blur(6px)}
-.card:hover{border-color:var(--gold)}
-.card h3{color:var(--gold2);font-size:1.1rem;margin-bottom:4px}.card small{color:var(--teal)}.card p{color:var(--mut);font-size:.93rem;margin-top:8px}
-.stat{text-align:center}.stat b{display:block;font-size:2.4rem;color:var(--gold2)}.stat span{color:var(--mut)}
-.reveal{opacity:0;transform:translateY(40px) rotateX(12deg);transition:1s}.reveal.in{opacity:1;transform:none}
-/* modal */
-#modal,#admin{position:fixed;inset:0;z-index:60;display:none}
-#modal.on{display:flex;align-items:center;justify-content:center;background:rgba(3,6,14,.75);backdrop-filter:blur(6px)}
-.box{width:min(680px,92vw);max-height:86vh;overflow:auto;background:linear-gradient(160deg,#101c3a,#0a1226);border:1px solid var(--gold);border-radius:22px;padding:28px;animation:pop .5s cubic-bezier(.2,1.2,.3,1);position:relative}
-@keyframes pop{from{opacity:0;transform:perspective(800px) rotateX(-25deg) scale(.85)}}
-.x{position:absolute;top:14px;right:16px;background:none;border:0;color:var(--mut);font-size:1.6rem;cursor:pointer}.x:hover{color:var(--gold)}
-.box h2{margin-bottom:16px}
-.row{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}.row b{color:var(--gold2);min-width:130px}.row span{text-align:right;word-break:break-word}
-.row a{color:var(--teal);text-decoration:none}.row a:hover{text-decoration:underline}
-.tl{border-left:2px solid var(--gold);padding:0 0 18px 18px;margin-left:6px;position:relative}.tl:before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--gold)}
-.tl h4{color:#fff}.tl small{color:var(--teal);display:block}.tl p{color:var(--mut);font-size:.9rem}.tl i{color:var(--gold2);font-style:normal;font-size:.9rem}
-/* admin */
-#admin{background:var(--bg);overflow:auto}#admin.on{display:block}
-#login{max-width:380px;margin:12vh auto;padding:32px;border:1px solid var(--gold);border-radius:22px;background:var(--bg2);animation:pop .6s}
-input,textarea{width:100%;padding:11px 13px;margin:6px 0 12px;background:#0a1226;border:1px solid var(--line);border-radius:10px;color:var(--tx);font:inherit}
-input:focus,textarea:focus{outline:0;border-color:var(--gold)}label{font-size:.82rem;color:var(--mut)}
-#ed{max-width:900px;margin:auto;padding:30px 20px 80px}
-.eb{border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px;background:var(--card)}
-.eb h3{color:var(--gold2);margin-bottom:8px}.g2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
-.sm{padding:6px 14px;font-size:.85rem;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--tx);cursor:pointer}.sm:hover{border-color:var(--gold)}.sm.d{color:#ff8a8a}
-.err{color:#ff8a8a;font-size:.9rem;min-height:20px}
-.bar{position:sticky;top:0;z-index:5;background:var(--bg);padding:14px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;border-bottom:1px solid var(--line);margin-bottom:20px}
-/* footer */
-footer{margin-top:60px;padding:40px 20px;text-align:center;border-top:1px solid var(--line);background:rgba(7,13,28,.8)}
-footer p{color:var(--mut);margin-top:16px;font-size:.88rem}
-.ic{display:inline-flex;width:58px;height:58px;border-radius:50%;margin:0 10px;align-items:center;justify-content:center;border:1px solid var(--line);background:var(--card);cursor:pointer;transition:.35s;position:relative}
-.ic:hover{transform:translateY(-8px) rotateY(360deg) scale(1.12)}
-.ic.wa:hover{background:#25D366;border-color:#25D366}.ic.em:hover{background:#ea4335;border-color:#ea4335}
-.ic svg{width:28px;height:28px;fill:#fff}
-#mails{display:none;margin:20px auto 0;max-width:340px;padding:14px;border:1px solid var(--gold);border-radius:16px;background:var(--bg2);animation:pop .4s}
-#mails.on{display:block}#mails a{display:block;padding:12px;margin:6px 0;border-radius:10px;border:1px solid var(--line);color:var(--gold2);text-decoration:none}#mails a:hover{background:rgba(212,175,55,.12)}
-@media(max-width:800px){#hero{grid-template-columns:1fr;text-align:center}#hero p{margin-inline:auto}.scene{height:300px;order:-1}.g2{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important}}
-</style></head><body>
-<canvas id="bg"></canvas>
-<div id="burger" title="Menu"><i></i><i></i><i></i></div>
-<nav id="drawer">
- <button data-a="admin"><em>🔐</em>Admin</button>
- <button data-a="contact"><em>📞</em>Contact</button>
- <button data-a="exp"><em>💼</em>Experience</button>
- <button data-a="pers"><em>🪪</em>Personal Data</button>
+:root{
+  --bg:#070d1c; --bg2:#0d1730; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.12);
+  --gold:#d9b45a; --gold2:#f3dc9b; --teal:#3cc9bd; --text:#e9eef8; --muted:#9aa8c3;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+#bg3d{position:fixed;inset:0;z-index:0;width:100%;height:100%}
+.veil{position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse at 70% 20%,rgba(60,201,189,.08),transparent 55%),radial-gradient(ellipse at 20% 80%,rgba(217,180,90,.07),transparent 55%);pointer-events:none}
+main,footer{position:relative;z-index:1}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:700}
+.gold{background:linear-gradient(90deg,var(--gold),var(--gold2),var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* menu button (3 lines, left) */
+.menu-btn{position:fixed;top:18px;left:18px;z-index:50;width:52px;height:52px;border-radius:14px;border:1px solid var(--line);background:rgba(13,23,48,.8);backdrop-filter:blur(10px);cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;transition:.3s;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.menu-btn span{display:block;width:24px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--gold),var(--teal));transition:.3s}
+.menu-btn:hover{transform:translateY(-2px) rotateX(15deg);border-color:var(--gold)}
+.menu-btn.open span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.menu-btn.open span:nth-child(2){opacity:0}
+.menu-btn.open span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+.drawer{position:fixed;top:0;left:0;bottom:0;width:290px;max-width:85vw;z-index:40;background:linear-gradient(160deg,rgba(13,23,48,.96),rgba(7,13,28,.98));backdrop-filter:blur(14px);border-right:1px solid var(--line);padding:100px 22px 30px;transform:translateX(-105%);transition:transform .5s cubic-bezier(.2,.8,.2,1);perspective:800px}
+.drawer.open{transform:none}
+.drawer h4{font-size:12px;letter-spacing:3px;color:var(--muted);margin-bottom:16px;text-transform:uppercase}
+.drawer button{display:flex;align-items:center;gap:14px;width:100%;padding:15px 16px;margin-bottom:12px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:16px;cursor:pointer;text-align:left;transition:.3s;transform-origin:left center}
+.drawer button:hover{background:rgba(217,180,90,.12);border-color:var(--gold);transform:rotateY(-8deg) translateX(6px)}
+.drawer button i{font-style:normal;font-size:20px;width:26px;text-align:center}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:30;opacity:0;pointer-events:none;transition:.4s}
+.scrim.show{opacity:1;pointer-events:auto}
+
+section{padding:90px 6vw;max-width:1200px;margin:0 auto}
+.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:110px}
+.tag{display:inline-block;padding:6px 16px;border:1px solid var(--gold);border-radius:30px;color:var(--gold2);font-size:13px;letter-spacing:2px;margin-bottom:22px;text-transform:uppercase}
+.hero h1{font-size:clamp(40px,7vw,84px);line-height:1.05;margin-bottom:14px}
+.hero h2{font-size:clamp(18px,2.4vw,26px);color:var(--teal);font-family:'Segoe UI',sans-serif;font-weight:500;margin-bottom:20px}
+.hero p{color:var(--muted);font-size:18px;max-width:560px;margin-bottom:30px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:14px 28px;border-radius:12px;border:1px solid var(--gold);background:linear-gradient(135deg,var(--gold),#b98f2e);color:#0a1224;font-weight:700;font-size:15px;cursor:pointer;transition:.3s;text-decoration:none}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(217,180,90,.35)}
+.btn.ghost{background:transparent;color:var(--gold2)}
+.scene{perspective:1200px;display:flex;justify-content:center}
+.card3d{width:min(380px,90%);aspect-ratio:3/4;border-radius:26px;position:relative;transform-style:preserve-3d;transition:transform .15s;background:linear-gradient(145deg,rgba(255,255,255,.1),rgba(255,255,255,.02));border:1px solid var(--line);box-shadow:0 40px 80px rgba(0,0,0,.55);animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{margin-top:0}50%{margin-top:-16px}}
+.card3d .layer{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:30px}
+.monogram{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:62px;font-weight:700;color:#0a1224;background:conic-gradient(from 0deg,var(--gold),var(--gold2),var(--teal),var(--gold));transform:translateZ(70px);box-shadow:0 20px 50px rgba(60,201,189,.3);animation:spin 14s linear infinite}
+@keyframes spin{to{filter:hue-rotate(360deg)}}
+.card3d .nm{font-family:Georgia,serif;font-size:28px;margin-top:26px;transform:translateZ(50px)}
+.card3d .rl{color:var(--teal);font-size:14px;margin-top:6px;transform:translateZ(40px)}
+.card3d .stat{display:flex;gap:26px;margin-top:28px;transform:translateZ(60px)}
+.stat b{display:block;font-size:26px;color:var(--gold2);font-family:Georgia,serif}
+.stat small{color:var(--muted);font-size:12px}
+.orb{position:absolute;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--gold2),var(--gold) 60%,#7a5c18);box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.orb.a{width:44px;height:44px;top:-18px;right:30px;transform:translateZ(100px);animation:bob 5s ease-in-out infinite}
+.orb.b{width:28px;height:28px;bottom:40px;left:-14px;transform:translateZ(90px);background:radial-gradient(circle at 30% 30%,#b8fff6,var(--teal) 60%,#146b64);animation:bob 4s ease-in-out infinite reverse}
+@keyframes bob{50%{translate:0 -14px}}
+
+.title{font-size:clamp(28px,4vw,44px);margin-bottom:10px}
+.sub{color:var(--muted);margin-bottom:44px}
+.glass{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px;backdrop-filter:blur(8px)}
+.tilt{transition:transform .2s,border-color .3s,box-shadow .3s;transform-style:preserve-3d;will-change:transform}
+.tilt:hover{border-color:rgba(217,180,90,.55);box-shadow:0 25px 60px rgba(0,0,0,.45)}
+
+.timeline{position:relative;padding-left:34px;perspective:1200px}
+.timeline:before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold),var(--teal))}
+.tl{position:relative;margin-bottom:26px}
+.tl:before{content:"";position:absolute;left:-34px;top:26px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:3px solid var(--gold);box-shadow:0 0 18px var(--gold)}
+.tl .org{color:var(--teal);font-size:14px;letter-spacing:.5px}
+.tl h3{font-size:22px;margin:4px 0}
+.tl .per{display:inline-block;font-size:13px;color:var(--gold2);border:1px solid var(--line);border-radius:20px;padding:2px 12px;margin:6px 0 10px}
+.tl p{color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;perspective:1200px}
+.glass h3{font-size:20px;margin-bottom:6px}
+.glass .meta{color:var(--teal);font-size:14px}
+.glass p{color:var(--muted);margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:10px 22px;border-radius:30px;border:1px solid var(--gold);color:var(--gold2);background:rgba(217,180,90,.08);font-size:16px}
+.reveal{opacity:0;transform:translateY(40px) rotateX(10deg);transition:1s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+footer{margin-top:40px;padding:50px 6vw 40px;text-align:center;border-top:1px solid var(--line);background:linear-gradient(transparent,rgba(7,13,28,.9))}
+.social{display:flex;gap:22px;justify-content:center;margin-bottom:24px;perspective:600px}
+.soc{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;border:none;cursor:pointer;transition:.35s;box-shadow:0 12px 30px rgba(0,0,0,.5);text-decoration:none}
+.soc svg{width:32px;height:32px;fill:#fff}
+.soc.wa{background:linear-gradient(135deg,#25d366,#128c4a)}
+.soc.em{background:linear-gradient(135deg,#ea4335,#a52714)}
+.soc:hover{transform:translateY(-8px) rotateY(180deg) scale(1.1)}
+footer p{color:var(--muted);font-size:14px}
+
+/* modals */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(3,7,16,.75);backdrop-filter:blur(6px);perspective:1200px}
+.modal.show{display:flex}
+.box{width:min(560px,100%);max-height:88vh;overflow:auto;background:linear-gradient(160deg,#101c3a,#0a1226);border:1px solid rgba(217,180,90,.4);border-radius:22px;padding:34px;position:relative;box-shadow:0 40px 100px rgba(0,0,0,.7);animation:pop .55s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes pop{from{opacity:0;transform:rotateX(-35deg) translateY(40px) scale(.9)}to{opacity:1;transform:none}}
+.box h2{font-size:28px;margin-bottom:20px}
+.x{position:absolute;top:14px;right:16px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:18px;cursor:pointer}
+.x:hover{border-color:var(--gold);color:var(--gold)}
+.row{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border:none}
+.row span{color:var(--muted);flex-shrink:0}
+.row b{text-align:right;font-weight:600;color:var(--gold2);word-break:break-word}
+.row a{color:var(--gold2);text-decoration:none}
+.row a:hover{text-decoration:underline}
+.xp{padding:14px 0;border-bottom:1px solid var(--line)}
+.xp:last-child{border:none}
+.xp b{color:var(--gold2)} .xp small{display:block;color:var(--teal)} .xp p{color:var(--muted);font-size:14px;margin-top:4px}
+.mail-opt{display:flex;align-items:center;gap:14px;padding:16px;margin-bottom:12px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--text);text-decoration:none;transition:.3s}
+.mail-opt:hover{border-color:var(--gold);transform:translateX(6px) rotateY(-5deg)}
+
+/* admin page */
+.admin{position:fixed;inset:0;z-index:200;display:none;overflow:auto;background:radial-gradient(circle at 20% 10%,#14234a,#060b18 70%)}
+.admin.show{display:block}
+.login{min-height:100vh;display:grid;place-items:center;padding:20px;perspective:1200px}
+.login .box{animation:pop .7s cubic-bezier(.2,.9,.3,1.2);max-height:none}
+label{display:block;font-size:13px;color:var(--muted);margin:14px 0 6px}
+input,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--text);font:inherit;outline:none;transition:.2s}
+input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(217,180,90,.15)}
+textarea{min-height:80px;resize:vertical}
+.err{color:#ff8a8a;font-size:14px;margin-top:10px;min-height:20px}
+.panel{max-width:960px;margin:0 auto;padding:30px 20px 120px}
+.panel header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:24px}
+.fs{margin-bottom:24px}
+.fs h3{color:var(--gold2);margin-bottom:6px;font-size:20px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0 18px}
+.item{border:1px dashed var(--line);border-radius:14px;padding:14px;margin-top:14px;position:relative}
+.del{position:absolute;top:10px;right:10px;background:rgba(255,80,80,.15);border:1px solid rgba(255,80,80,.5);color:#ff9a9a;border-radius:8px;padding:4px 10px;cursor:pointer;font-size:12px}
+.addb{margin-top:14px;padding:10px 18px;border-radius:10px;border:1px dashed var(--teal);background:transparent;color:var(--teal);cursor:pointer}
+.savebar{position:fixed;left:0;right:0;bottom:0;padding:14px;background:rgba(6,11,24,.95);backdrop-filter:blur(10px);border-top:1px solid var(--line);display:flex;gap:10px;justify-content:center;flex-wrap:wrap;z-index:5}
+.btn.sm{padding:10px 20px;font-size:14px}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(30px);background:var(--teal);color:#06231f;padding:12px 26px;border-radius:30px;font-weight:700;opacity:0;transition:.4s;z-index:300;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%)}
+
+@media(max-width:860px){.hero{grid-template-columns:1fr;text-align:center}.hero p{margin-inline:auto}.btns{justify-content:center}.scene{order:-1;margin-top:30px}.tl:before{left:-34px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="bg3d"></canvas><div class="veil"></div>
+
+<!-- 3 lines menu -->
+<button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+<div class="scrim" id="scrim"></div>
+<nav class="drawer" id="drawer">
+  <h4>Menu</h4>
+  <button data-open="admin"><i>🔐</i> Admin</button>
+  <button data-open="contact"><i>📞</i> Contact</button>
+  <button data-open="experience"><i>💼</i> Experience</button>
+  <button data-open="personal"><i>🪪</i> Personal Data</button>
 </nav>
 
-<header id="hero">
- <div>
-  <span class="tag" id="h-tag"></span>
-  <h1 id="h-name"></h1>
-  <p id="h-sum"></p>
-  <a class="btn" href="#experience">View Experience</a><button class="btn o" id="h-contact">Contact Me</button>
- </div>
-</header>
+<main>
+  <section class="hero" id="home">
+    <div>
+      <span class="tag" id="h-tag">Open to new opportunities</span>
+      <h1 class="gold" id="h-name"></h1>
+      <h2 id="h-title"></h2>
+      <p id="h-obj"></p>
+      <div class="btns">
+        <a class="btn" href="#experience">View Experience</a>
+        <button class="btn ghost" data-open="contact">Contact Me</button>
+      </div>
+    </div>
+    <div class="scene" id="scene">
+      <div class="card3d" id="card3d">
+        <div class="orb a"></div><div class="orb b"></div>
+        <div class="layer">
+          <div class="monogram" id="mono"><svg viewBox="0 0 24 24" width="70" height="70" fill="#0a1224"><path d="M12 2 2 7v2h20V7L12 2zM4 11v7h3v-7H4zm6.5 0v7h3v-7h-3zM17 11v7h3v-7h-3zM2 20v2h20v-2H2z"/></svg></div>
+          <div class="nm" id="c-name"></div>
+          <div class="rl" id="c-role"></div>
+          <div class="stat"><div><b id="c-yrs">20+</b><small>Years in Banking</small></div><div><b>NBP</b><small>Employer</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section><div class="wrap" style="padding-top:20px"><div class="grid" id="stats"></div></div></section>
-<section id="experience"><div class="wrap"><h2>Work <span>Experience</span></h2><p class="sub">Over two decades with the National Bank of Pakistan</p><div class="grid" id="exp-grid"></div></div></section>
-<section><div class="wrap"><div class="grid">
- <div><h2>Edu<span>cation</span></h2><br><div id="edu"></div></div>
- <div><h2>Computer <span>Skills</span></h2><br><div id="skills"></div></div>
- <div><h2>Lang<span>uages</span></h2><br><div id="langs"></div></div>
-</div></div></section>
+  <section id="experience">
+    <h2 class="title gold reveal">Professional Experience</h2>
+    <p class="sub reveal">A career built at National Bank of Pakistan since 2003.</p>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <section id="education">
+    <h2 class="title gold reveal">Education</h2>
+    <p class="sub reveal">Academic qualifications.</p>
+    <div class="grid2" id="edu"></div>
+  </section>
+
+  <section id="skills">
+    <h2 class="title gold reveal">Computer Skills</h2>
+    <p class="sub reveal">Technical training and software proficiency.</p>
+    <div class="grid2" id="skl"></div>
+  </section>
+
+  <section id="more">
+    <div class="grid2">
+      <div class="glass tilt reveal"><h3 class="gold">Languages</h3><br><div class="chips" id="lang"></div></div>
+      <div class="glass tilt reveal"><h3 class="gold">References</h3><p id="refs"></p></div>
+    </div>
+  </section>
+</main>
 
 <footer>
- <div>
-  <a class="ic wa" id="wa" target="_blank" rel="noopener" title="Chat on WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 7.5c-.6.6-.9 1.400-.6 2.400.6 2 2.600 4.200 4.800 5 1 .4 1.900.1 2.500-.5l.4-.6-2-1.100-.8.800c-1-.4-2.200-1.600-2.600-2.600l.8-.8-1.100-2z"/></svg></a>
-  <span class="ic em" id="emb" title="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5z"/></svg></span>
- </div>
- <div id="mails"></div>
- <p>© <span id="yr"></span> <span id="f-name"></span> · All rights reserved</p>
+  <div class="social">
+    <a class="soc wa" id="waBtn" target="_blank" rel="noopener" title="Chat on WhatsApp" aria-label="WhatsApp">
+      <svg viewBox="0 0 32 32"><path d="M16.003 3C8.83 3 3 8.83 3 16c0 2.29.6 4.52 1.74 6.49L3 29l6.7-1.7A12.97 12.97 0 0 0 16 29c7.17 0 13-5.83 13-13S23.17 3 16.003 3zm0 23.7c-1.95 0-3.86-.53-5.53-1.52l-.4-.24-3.98 1.01 1.06-3.88-.26-.4A10.66 10.66 0 0 1 5.3 16C5.3 10.1 10.1 5.3 16 5.3S26.7 10.1 26.7 16 21.9 26.7 16 26.7zm5.86-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.1-.5-.16-.72.16-.22.32-.83 1.04-1.02 1.26-.19.22-.38.24-.7.08-.32-.16-1.36-.5-2.58-1.6-.96-.85-1.6-1.9-1.78-2.22-.19-.32-.02-.5.14-.66.14-.14.32-.38.48-.57.16-.19.22-.32.32-.54.1-.22.05-.4-.03-.57-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55h-.62c-.22 0-.57.08-.86.4-.3.32-1.13 1.1-1.13 2.7s1.16 3.13 1.32 3.35c.16.22 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.04.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.13-.3-.21-.62-.37z"/></svg>
+    </a>
+    <button class="soc em" id="emBtn" title="Send Email" aria-label="Email">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5v2.2z"/></svg>
+    </button>
+  </div>
+  <p>© <span id="yr"></span> <span id="f-name"></span> · Banking Professional · Swabi, Khyber Pakhtunkhwa</p>
 </footer>
 
-<div id="modal"><div class="box"><button class="x" id="mx">×</button><div id="mb"></div></div></div>
+<!-- Modals -->
+<div class="modal" id="m-contact"><div class="box"><button class="x" data-close>✕</button><h2 class="gold">Contact Details</h2><div id="contactBody"></div></div></div>
+<div class="modal" id="m-experience"><div class="box"><button class="x" data-close>✕</button><h2 class="gold">Experience</h2><div id="expBody"></div></div></div>
+<div class="modal" id="m-personal"><div class="box"><button class="x" data-close>✕</button><h2 class="gold">Personal Data</h2><div id="perBody"></div></div></div>
+<div class="modal" id="m-email"><div class="box"><button class="x" data-close>✕</button><h2 class="gold">Send an Email</h2><p style="color:var(--muted);margin-bottom:16px">Choose an address to open your email app:</p><div id="mailList"></div></div></div>
 
-<div id="admin">
- <div id="login"><h2>Admin <span>Login</span></h2><p class="sub">Enter your credentials to continue</p>
-  <label>Username</label><input id="u" autocomplete="off"><label>Password</label><input id="p" type="password">
-  <div class="err" id="err"></div>
-  <button class="btn" id="go">Continue</button><button class="btn o" id="back">Back</button></div>
- <div id="ed" style="display:none"></div>
+<!-- Admin page -->
+<div class="admin" id="admin">
+  <div class="login" id="loginView">
+    <div class="box">
+      <button class="x" id="adminClose">✕</button>
+      <h2 class="gold">Admin Login</h2>
+      <p style="color:var(--muted)">Enter your credentials to edit the portfolio.</p>
+      <label>Username</label><input id="u" autocomplete="off">
+      <label>Password</label><input id="p" type="password">
+      <div class="err" id="err"></div>
+      <button class="btn" id="loginBtn" style="width:100%;margin-top:10px">Continue</button>
+    </div>
+  </div>
+  <div class="panel" id="panelView" style="display:none">
+    <header><h2 class="gold">Edit Portfolio</h2><div><button class="btn ghost sm" id="logout">Logout</button> <button class="btn ghost sm" id="adminClose2">View Site</button></div></header>
+    <div id="editor"></div>
+    <div class="savebar">
+      <button class="btn sm" id="saveBtn">💾 Save Changes</button>
+      <button class="btn ghost sm" id="exportBtn">Export Backup</button>
+      <button class="btn ghost sm" id="importBtn">Import Backup</button>
+      <button class="btn ghost sm" id="resetBtn">Reset to Original</button>
+      <input type="file" id="importFile" accept=".json" style="display:none">
+    </div>
+  </div>
 </div>
+<div class="toast" id="toast"></div>
 
 <script>
-const KEY='asad_portfolio_v1',ADMIN_U='asadiqbal',ADMIN_P='asad3344';
-const DEF={name:'Asad Iqbal',tag:'National Bank of Pakistan · Since 2003',
-sum:'Dedicated banking professional with 20+ years of hands-on experience across account opening, government section operations, credit administration, loan processing and reconciliation. Seeking to be part of an esteemed organization for the best utilization of my capabilities and skills.',
-phone:'+92-316-9382133',wa:'923169382133',emails:['asadnbp0406@gmail.com','asadnhp1547@gmail.com'],
-exp:[
-{org:'National Bank of Pakistan, Kalabat Branch',role:'Assistant to Manager',period:'June 2023 – Present',desc:'Major assignments on A/C opening, salaries, pension and clearing cheques of different bank accounts.'},
-{org:'National Bank of Pakistan, Main Branch Swabi',role:'Incharge to Govt Section',period:'Nov 2019 – May 2023',desc:'Leading the government section of the main branch.'},
-{org:'National Bank of Pakistan, Main Branch Swabi',role:'Assistant Incharge to Credit Administration',period:'Dec 2015 – Oct 2019',desc:'Processed loan applications for NBP products incl. Advance Salary Scheme, Gold Loan, Demand Finance and Agriculture Finance; executed loan documents, monitored advances and reported to middle & upper management.'},
-{org:'National Bank of Pakistan, Main Branch Swabi',role:'Assistant to Incharge of Govt Section',period:'Jan 2012 – Nov 2015',desc:'E-remittance, FBR collection, developed complete database of GP Fund, disbursement of salaries, pensions & other payments, and reconciliation of bank account records.'},
-{org:'National Bank of Pakistan, Main Branch Swabi',role:'Assistant to Operation Manager',period:'Feb 2008 – Dec 2011',desc:'A/C opening, EOBI collection and clearing cheques of different bank accounts.'},
-{org:'National Bank of Pakistan, Thand Koi Branch Swabi',role:'Contract Staff',period:'15-05-2003 – 02-02-2008',desc:'Account opening, cash handling and BBO software.'}],
-edu:[{t:'FA',s:'BISE Peshawar',y:'2006-07'},{t:'SSC',s:'BISE Peshawar',y:'1995-96'}],
-skills:[{t:'MASARCOM (KPK Govt. Joint Venture)',d:'6-month course, 2002 – EDP, DOS, Windows, MS Office, Visual C++'},{t:'Global Computer Institute (Technical Education, KPK)',d:'MS Windows, MS Excel, drafting, costing, estimation, AutoCAD'}],
-langs:['Urdu','English','Pushto'],
-pers:[['Full Name','Asad Iqbal'],['Father Name','Muhammad Rifaq'],['Date of Birth','01-01-1977'],['CNIC No','16202-2824719-1'],['Domicile','Swabi, KPK'],['Nationality','Pakistani'],['Religion','Islam'],['Marital Status','Married'],['Address','Village Aka Khel, Post Office Gar Munara, Tehsil & District Swabi, KPK']]};
-let D;try{D=JSON.parse(localStorage.getItem(KEY))||JSON.parse(JSON.stringify(DEF))}catch(e){D=JSON.parse(JSON.stringify(DEF))}
-const $=s=>document.querySelector(s),esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(D))}catch(e){}};
+(function(){
+'use strict';
+var KEY='asad_portfolio_v1', ADMIN_USER='asadiqbal', ADMIN_PASS='asad3344';
 
+var DEFAULT={
+  name:'Asad Iqbal',
+  title:'Assistant to Manager · National Bank of Pakistan',
+  objective:'To be part of an esteemed organization for the best utilization of my capabilities and skills. Working with the National Bank of Pakistan since 2003 with wide experience across various seats in the bank.',
+  phone:'+92-316-9382133',
+  whatsapp:'923169382133',
+  emails:['asadnbp0406@gmail.com','asadnbp1547@gmail.com'],
+  father:'Muhammad Rifaq', dob:'01-01-1977', cnic:'16202-2824719-1',
+  domicile:'Swabi, KPK', nationality:'Pakistani', religion:'Islam', marital:'Married',
+  address:'Village Aka Khel, Post Office Gar Munara, Tehsil & District Swabi, KPK',
+  references:'Will be furnished upon request.',
+  experience:[
+    {org:'National Bank of Pakistan, Kalabat Branch',role:'Assistant to Manager',period:'June 2023 – Present',desc:'Working as Assistant with major assignments on A/C opening, salaries, pension and clearing cheques of different bank accounts.'},
+    {org:'National Bank of Pakistan, Main Branch Swabi',role:'Incharge Govt Section',period:'Nov 2019 – May 2023',desc:''},
+    {org:'National Bank of Pakistan, Main Branch Swabi',role:'Assistant Incharge, Credit Administration',period:'Dec 2015 – Oct 2019',desc:'Processing of loan applications for different NBP products including NBP Advance Salary Scheme, Gold Loan Demand Finance and NBP Agriculture Finance. Execution of loan documents, regular monitoring of advances made by the branch and all sorts of reporting to middle & upper management regarding these portfolios.'},
+    {org:'National Bank of Pakistan, Main Branch Swabi',role:'Assistant to Incharge of Govt Section',period:'Jan 2012 – Nov 2015',desc:'E-remittance, FBR collection, developed complete database of GP Fund, disbursement of salaries, pension & other payments, maintaining different bank account records and reconciliation.'},
+    {org:'National Bank of Pakistan, Main Branch Swabi',role:'Assistant to Operation Manager',period:'Feb 2008 – Dec 2011',desc:'Working as Assistant with major assignments on A/C opening, EOBI collection and clearing cheques of different bank accounts.'},
+    {org:'National Bank of Pakistan, Thand Koi Branch Swabi',role:'Banking Assistant',period:'15-05-2003 – 02-02-2008',desc:'Working on A/C opening, cash and BBO software.'}
+  ],
+  education:[
+    {degree:'F.A. (Intermediate)',board:'BISE, Peshawar',year:'2006–07'},
+    {degree:'S.S.C. (Matric)',board:'BISE, Peshawar',year:'1995–96'}
+  ],
+  skills:[
+    {inst:'MASARCOM',note:'Joint Venture of Government of KPK · 05 Apr 2002 – 04 Oct 2002 (Six-month course)',detail:'EDP, DOS, Windows, MS-Office, Visual C++'},
+    {inst:'Global Computer Institute',note:'Technical Education, Government of KPK',detail:'MS Windows, MS Excel, Drafting, Costing, Estimation and AutoCAD'}
+  ],
+  languages:['Urdu','English','Pushto']
+};
+
+function clone(o){return JSON.parse(JSON.stringify(o))}
+function load(){try{var s=localStorage.getItem(KEY);if(s)return Object.assign(clone(DEFAULT),JSON.parse(s))}catch(e){}return clone(DEFAULT)}
+function persist(d){try{localStorage.setItem(KEY,JSON.stringify(d));return true}catch(e){return false}}
+var D=load();
+
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function $(id){return document.getElementById(id)}
+function digits(s){return String(s).replace(/\D/g,'')}
+
+/* ---------- render ---------- */
 function render(){
- $('#h-name').textContent=D.name;$('#h-tag').textContent=D.tag;$('#h-sum').textContent=D.sum;$('#f-name').textContent=D.name;$('#yr').textContent=new Date().getFullYear();
- document.title=D.name+' – Banking Professional Portfolio';
- const yrs=new Date().getFullYear()-2003;
- $('#stats').innerHTML=[[yrs+'+','Years at NBP'],[D.exp.length,'Positions Held'],['3','Branches'],[D.langs.length,'Languages']].map(a=>`<div class="card stat reveal"><b>${esc(a[0])}</b><span>${a[1]}</span></div>`).join('');
- $('#exp-grid').innerHTML=D.exp.map(e=>`<div class="card reveal"><small>${esc(e.period)}</small><h3>${esc(e.role)}</h3><div style="font-size:.88rem">${esc(e.org)}</div><p>${esc(e.desc)}</p></div>`).join('');
- $('#edu').innerHTML=D.edu.map(e=>`<div class="card reveal" style="margin-bottom:14px"><small>${esc(e.y)}</small><h3>${esc(e.t)}</h3><p>${esc(e.s)}</p></div>`).join('');
- $('#skills').innerHTML=D.skills.map(e=>`<div class="card reveal" style="margin-bottom:14px"><h3>${esc(e.t)}</h3><p>${esc(e.d)}</p></div>`).join('');
- $('#langs').innerHTML=D.langs.map(l=>`<div class="card reveal" style="margin-bottom:14px"><h3>${esc(l)}</h3></div>`).join('');
- $('#wa').href='https://wa.me/'+D.wa.replace(/\D/g,'')+'?text='+encodeURIComponent('Hello '+D.name+', I saw your portfolio.');
- $('#mails').innerHTML=D.emails.map(m=>`<a href="mailto:${esc(m)}" data-mail="${esc(m)}">✉ ${esc(m)}</a>`).join('');
- tilt();observe();
+  document.title=D.name+' | Banking Professional Portfolio';
+  $('h-name').textContent=D.name; $('c-name').textContent=D.name; $('f-name').textContent=D.name;
+  $('h-title').textContent=D.title; $('c-role').textContent=D.title.split('·')[0].trim();
+  $('h-obj').textContent=D.objective;
+  $('yr').textContent=new Date().getFullYear();
+  $('c-yrs').textContent=Math.max(1,new Date().getFullYear()-2003)+'+';
+  $('refs').textContent=D.references;
+  $('timeline').innerHTML=D.experience.map(function(x){return '<div class="tl reveal"><div class="glass tilt"><div class="org">'+esc(x.org)+'</div><h3>'+esc(x.role)+'</h3><span class="per">'+esc(x.period)+'</span>'+(x.desc?'<p>'+esc(x.desc)+'</p>':'')+'</div></div>'}).join('');
+  $('edu').innerHTML=D.education.map(function(e){return '<div class="glass tilt reveal"><h3>'+esc(e.degree)+'</h3><div class="meta">'+esc(e.board)+'</div><p>Year: '+esc(e.year)+'</p></div>'}).join('');
+  $('skl').innerHTML=D.skills.map(function(s){return '<div class="glass tilt reveal"><h3>'+esc(s.inst)+'</h3><div class="meta">'+esc(s.note)+'</div><p>'+esc(s.detail)+'</p></div>'}).join('');
+  $('lang').innerHTML=D.languages.map(function(l){return '<span class="chip">'+esc(l)+'</span>'}).join('');
+  $('waBtn').href='https://wa.me/'+digits(D.whatsapp)+'?text='+encodeURIComponent('Hello '+D.name+', I saw your portfolio.');
+  $('mailList').innerHTML=D.emails.map(function(m){return '<a class="mail-opt" href="mailto:'+esc(m)+'?subject='+encodeURIComponent('Job Opportunity')+'">✉️ <span>'+esc(m)+'</span></a>'}).join('');
+  $('contactBody').innerHTML='<div class="row"><span>Phone</span><b><a href="tel:'+esc(D.phone.replace(/[^\d+]/g,''))+'">'+esc(D.phone)+'</a></b></div>'+
+    D.emails.map(function(m,i){return '<div class="row"><span>Email '+(i+1)+'</span><b><a href="mailto:'+esc(m)+'">'+esc(m)+'</a></b></div>'}).join('');
+  $('expBody').innerHTML=D.experience.map(function(x){return '<div class="xp"><b>'+esc(x.role)+'</b><small>'+esc(x.org)+' · '+esc(x.period)+'</small>'+(x.desc?'<p>'+esc(x.desc)+'</p>':'')+'</div>'}).join('');
+  var P=[['Name',D.name],['Father Name',D.father],['Date of Birth',D.dob],['CNIC No',D.cnic],['Domicile',D.domicile],['Nationality',D.nationality],['Religion',D.religion],['Marital Status',D.marital],['Address',D.address]];
+  $('perBody').innerHTML=P.map(function(r){return '<div class="row"><span>'+r[0]+'</span><b>'+esc(r[1])+'</b></div>'}).join('');
+  observe(); bindTilt();
 }
-/* panels */
-function open_(html){$('#mb').innerHTML=html;$('#modal').classList.add('on')}
-function panel(k){
- if(k==='contact')open_(`<h2>Contact <span>Details</span></h2><div class="row"><b>Phone</b><span><a href="tel:${esc(D.phone)}">${esc(D.phone)}</a></span></div>`+D.emails.map((m,i)=>`<div class="row"><b>Email ${i+1}</b><span><a href="mailto:${esc(m)}" data-mail="${esc(m)}">${esc(m)}</a></span></div>`).join(''));
- if(k==='exp')open_(`<h2>All <span>Experience</span></h2>`+D.exp.map(e=>`<div class="tl"><h4>${esc(e.role)}</h4><small>${esc(e.org)}</small><i>${esc(e.period)}</i><p>${esc(e.desc)}</p></div>`).join(''));
- if(k==='pers')open_(`<h2>Personal <span>Data</span></h2>`+D.pers.map(r=>`<div class="row"><b>${esc(r[0])}</b><span>${esc(r[1])}</span></div>`).join(''));
- if(k==='admin')showAdmin();
-}
-const closeMenu=()=>{$('#drawer').classList.remove('on');$('#burger').classList.remove('on')};
-$('#burger').onclick=()=>{$('#drawer').classList.toggle('on');$('#burger').classList.toggle('on')};
-document.querySelectorAll('#drawer button').forEach(b=>b.onclick=()=>{closeMenu();panel(b.dataset.a)});
-$('#h-contact').onclick=()=>panel('contact');
-$('#mx').onclick=()=>$('#modal').classList.remove('on');
-$('#modal').onclick=e=>{if(e.target.id==='modal')$('#modal').classList.remove('on')};
-$('#emb').onclick=()=>$('#mails').classList.toggle('on');
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('#modal').classList.remove('on');closeMenu()}});
 
-/* admin */
-function showAdmin(){$('#admin').classList.add('on');$('#login').style.display='';$('#ed').style.display='none';$('#u').value=$('#p').value='';$('#err').textContent='';document.body.style.overflow='hidden'}
-function hideAdmin(){$('#admin').classList.remove('on');document.body.style.overflow=''}
-$('#back').onclick=hideAdmin;
-const tryLogin=()=>{if($('#u').value.trim()===ADMIN_U&&$('#p').value===ADMIN_P){$('#login').style.display='none';$('#ed').style.display='block';editor()}else $('#err').textContent='Incorrect username or password.'};
-$('#go').onclick=tryLogin;$('#p').onkeydown=e=>{if(e.key==='Enter')tryLogin()};
-const inp=(l,v,p)=>`<div><label>${l}</label><input data-p="${p}" value="${esc(v)}"></div>`;
-function editor(){
- let h=`<div class="bar"><h2>Admin <span>Panel</span></h2><div><button class="btn" id="sv">Save Changes</button><button class="btn o" id="lo">Logout</button></div></div>
- <div class="eb"><h3>Basic Info</h3><div class="g2">${inp('Name',D.name,'name')}${inp('Tagline',D.tag,'tag')}</div><label>About / Summary</label><textarea rows="4" data-p="sum">${esc(D.sum)}</textarea></div>
- <div class="eb"><h3>Contact</h3><div class="g2">${inp('Phone',D.phone,'phone')}${inp('WhatsApp number (digits with country code)',D.wa,'wa')}</div><label>Emails (one per line)</label><textarea rows="3" data-p="emails">${esc(D.emails.join('\n'))}</textarea></div>
- <div class="eb"><h3>Experience</h3>${D.exp.map((e,i)=>`<div class="eb"><div class="g2">${inp('Role',e.role,'exp.'+i+'.role')}${inp('Period',e.period,'exp.'+i+'.period')}</div>${inp('Organization',e.org,'exp.'+i+'.org')}<label>Description</label><textarea rows="2" data-p="exp.${i}.desc">${esc(e.desc)}</textarea><button class="sm d" data-del="exp.${i}">Remove</button></div>`).join('')}<button class="sm" data-add="exp">+ Add experience</button></div>
- <div class="eb"><h3>Education</h3>${D.edu.map((e,i)=>`<div class="g2">${inp('Degree',e.t,'edu.'+i+'.t')}${inp('Board / Institute',e.s,'edu.'+i+'.s')}${inp('Year',e.y,'edu.'+i+'.y')}<div><br><button class="sm d" data-del="edu.${i}">Remove</button></div></div>`).join('')}<button class="sm" data-add="edu">+ Add education</button></div>
- <div class="eb"><h3>Computer Skills</h3>${D.skills.map((e,i)=>`${inp('Title',e.t,'skills.'+i+'.t')}${inp('Details',e.d,'skills.'+i+'.d')}<button class="sm d" data-del="skills.${i}">Remove</button><hr style="border:0;border-top:1px solid var(--line);margin:12px 0">`).join('')}<button class="sm" data-add="skills">+ Add skill</button></div>
- <div class="eb"><h3>Languages (one per line)</h3><textarea rows="3" data-p="langs">${esc(D.langs.join('\n'))}</textarea></div>
- <div class="eb"><h3>Personal Data</h3>${D.pers.map((r,i)=>`<div class="g2">${inp('Label',r[0],'pers.'+i+'.0')}${inp('Value',r[1],'pers.'+i+'.1')}</div><button class="sm d" data-del="pers.${i}">Remove</button><hr style="border:0;border-top:1px solid var(--line);margin:12px 0">`).join('')}<button class="sm" data-add="pers">+ Add field</button></div>
- <div class="err" id="ok" style="color:var(--teal)"></div>`;
- $('#ed').innerHTML=h;
- $('#lo').onclick=hideAdmin;
- $('#sv').onclick=()=>{collect();save();render();$('#ok').textContent='✓ Saved – your portfolio has been updated.';$('#admin').scrollTo({top:$('#admin').scrollHeight,behavior:'smooth'})};
- $('#ed').querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>{collect();const k=b.dataset.add;D[k].push({exp:{role:'',period:'',org:'National Bank of Pakistan',desc:''},edu:{t:'',s:'',y:''},skills:{t:'',d:''},pers:['','']}[k]);editor()});
- $('#ed').querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{collect();const[k,i]=b.dataset.del.split('.');D[k].splice(+i,1);editor()});
+/* ---------- reveal & tilt ---------- */
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12}):null;
+function observe(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){io?io.observe(el):el.classList.add('in')})}
+function bindTilt(){
+  document.querySelectorAll('.tilt:not([data-t])').forEach(function(el){
+    el.dataset.t=1;
+    el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform='perspective(900px) rotateY('+x*10+'deg) rotateX('+(-y*10)+'deg) translateZ(8px)'});
+    el.addEventListener('mouseleave',function(){el.style.transform=''});
+  });
 }
-function collect(){
- $('#ed').querySelectorAll('[data-p]').forEach(el=>{const p=el.dataset.p.split('.'),v=el.value;
-  if(p[0]==='emails'||p[0]==='langs')D[p[0]]=v.split('\n').map(s=>s.trim()).filter(Boolean);
-  else if(p.length===1)D[p[0]]=v;else D[p[0]][+p[1]][p[2]]=v;});
+var card=$('card3d');
+$('scene').addEventListener('mousemove',function(e){var r=$('scene').getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform='rotateY('+x*28+'deg) rotateX('+(-y*28)+'deg)'});
+$('scene').addEventListener('mouseleave',function(){card.style.transform=''});
+
+/* ---------- menu / modals ---------- */
+var drawer=$('drawer'),scrim=$('scrim'),mb=$('menuBtn');
+function menu(open){drawer.classList.toggle('open',open);scrim.classList.toggle('show',open);mb.classList.toggle('open',open)}
+mb.onclick=function(){menu(!drawer.classList.contains('open'))};
+scrim.onclick=function(){menu(false)};
+function openModal(id){menu(false);$('m-'+id).classList.add('show')}
+document.addEventListener('click',function(e){
+  var o=e.target.closest('[data-open]');
+  if(o){var k=o.dataset.open;if(k==='admin')openAdmin();else openModal(k)}
+  if(e.target.closest('[data-close]')||e.target.classList.contains('modal'))document.querySelectorAll('.modal').forEach(function(m){m.classList.remove('show')});
+});
+$('emBtn').onclick=function(){$('m-email').classList.add('show')};
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.modal').forEach(function(m){m.classList.remove('show')});menu(false)}});
+
+/* ---------- admin ---------- */
+var A=$('admin'),draft=null,authed=false;
+function openAdmin(){menu(false);A.classList.add('show');document.body.style.overflow='hidden';showAdmin()}
+function closeAdmin(){A.classList.remove('show');document.body.style.overflow=''}
+function showAdmin(){$('loginView').style.display=authed?'none':'grid';$('panelView').style.display=authed?'block':'none';if(authed)buildEditor();else{$('u').value='';$('p').value='';$('err').textContent=''}}
+$('adminClose').onclick=closeAdmin;$('adminClose2').onclick=closeAdmin;
+function login(){
+  if($('u').value.trim()===ADMIN_USER && $('p').value===ADMIN_PASS){authed=true;showAdmin()}
+  else $('err').textContent='Incorrect username or password.';
 }
-/* email: phones use the mail app, computers open Gmail compose */
-document.addEventListener('click',e=>{const a=e.target.closest('a[data-mail]');if(!a)return;
- if(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent))return;
- e.preventDefault();const m=a.dataset.mail;
- window.open('https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(m)+'&su='+encodeURIComponent('Job inquiry – '+D.name),'_blank','noopener')});
-/* effects */
-function tilt(){document.querySelectorAll('.card:not(.stat)').forEach(c=>{c.onmousemove=e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`rotateY(${x*14}deg) rotateX(${-y*14}deg) translateZ(14px)`};c.onmouseleave=()=>c.style.transform=''})}
-let io;function observe(){if(!window.IntersectionObserver){document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));return}io&&io.disconnect();io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el))}
-/* 3D particle field */
-(function(){const c=$('#bg'),x=c.getContext('2d');let W,H,P=[],mx=0,my=0;
- const rs=()=>{W=c.width=innerWidth;H=c.height=innerHeight};rs();addEventListener('resize',rs);
- for(let i=0;i<110;i++)P.push({x:Math.random()*2-1,y:Math.random()*2-1,z:Math.random()*2-1});
- addEventListener('mousemove',e=>{mx=e.clientX/W-.5;my=e.clientY/H-.5});
- let a=0;(function f(){a+=.0015;x.clearRect(0,0,W,H);const pts=P.map(p=>{const ca=Math.cos(a+mx),sa=Math.sin(a+mx);const X=p.x*ca-p.z*sa,Z=p.x*sa+p.z*ca+2.4,s=1.6/Z;return{X:W/2+X*s*W*.55,Y:H/2+(p.y+my*.3)*s*H*.55,s}});
-  for(let i=0;i<pts.length;i++){const p=pts[i];x.fillStyle=`rgba(212,175,55,${Math.min(.8,p.s*.6)})`;x.beginPath();x.arc(p.X,p.Y,p.s*2.2,0,7);x.fill();
-   for(let j=i+1;j<pts.length;j++){const q=pts[j],d=Math.hypot(p.X-q.X,p.Y-q.Y);if(d<110){x.strokeStyle=`rgba(45,212,191,${.18*(1-d/110)})`;x.beginPath();x.moveTo(p.X,p.Y);x.lineTo(q.X,q.Y);x.stroke()}}}
-  requestAnimationFrame(f)})()})();
+$('loginBtn').onclick=login;
+$('p').addEventListener('keydown',function(e){if(e.key==='Enter')login()});
+$('u').addEventListener('keydown',function(e){if(e.key==='Enter')$('p').focus()});
+$('logout').onclick=function(){authed=false;showAdmin()};
+
+var FLAT=[['name','Full Name'],['title','Job Title / Tagline'],['phone','Phone Number'],['whatsapp','WhatsApp Number (digits with country code)'],['father','Father Name'],['dob','Date of Birth'],['cnic','CNIC No'],['domicile','Domicile'],['nationality','Nationality'],['religion','Religion'],['marital','Marital Status']];
+var LISTS={
+  experience:{label:'Experience',fields:[['role','Position'],['org','Organization / Branch'],['period','Period'],['desc','Description','ta']],blank:{org:'',role:'',period:'',desc:''}},
+  education:{label:'Education',fields:[['degree','Degree'],['board','Board / Institute'],['year','Year']],blank:{degree:'',board:'',year:''}},
+  skills:{label:'Computer Skills',fields:[['inst','Institute / Course'],['note','Details (affiliation, dates)'],['detail','Skills covered','ta']],blank:{inst:'',note:'',detail:''}}
+};
+function inp(v,attrs,ta){return ta?'<textarea '+attrs+'>'+esc(v)+'</textarea>':'<input '+attrs+' value="'+esc(v)+'">'}
+function buildEditor(){
+  if(!draft)draft=clone(D);
+  var h='<div class="glass fs"><h3>Basic Information</h3><div class="cols">';
+  FLAT.forEach(function(f){h+='<div><label>'+f[1]+'</label>'+inp(draft[f[0]],'data-k="'+f[0]+'"')+'</div>'});
+  h+='</div><label>Address</label>'+inp(draft.address,'data-k="address"',1)+'<label>Objective / About</label>'+inp(draft.objective,'data-k="objective"',1)+'<label>References</label>'+inp(draft.references,'data-k="references"',1)+'</div>';
+  h+='<div class="glass fs"><h3>Email Addresses</h3><div id="L-emails">'+draft.emails.map(function(m,i){return '<div class="item"><button class="del" data-del="emails" data-i="'+i+'">Delete</button><label>Email '+(i+1)+'</label>'+inp(m,'data-list="emails" data-i="'+i+'"')+'</div>'}).join('')+'</div><button class="addb" data-add="emails">+ Add Email</button></div>';
+  Object.keys(LISTS).forEach(function(n){
+    var L=LISTS[n];h+='<div class="glass fs"><h3>'+L.label+'</h3>';
+    draft[n].forEach(function(it,i){h+='<div class="item"><button class="del" data-del="'+n+'" data-i="'+i+'">Delete</button>';L.fields.forEach(function(f){h+='<label>'+f[1]+'</label>'+inp(it[f[0]],'data-list="'+n+'" data-i="'+i+'" data-f="'+f[0]+'"',f[2])});h+='</div>'});
+    h+='<button class="addb" data-add="'+n+'">+ Add '+L.label+' Entry</button></div>';
+  });
+  h+='<div class="glass fs"><h3>Languages</h3>'+draft.languages.map(function(m,i){return '<div class="item"><button class="del" data-del="languages" data-i="'+i+'">Delete</button>'+inp(m,'data-list="languages" data-i="'+i+'"')+'</div>'}).join('')+'<button class="addb" data-add="languages">+ Add Language</button></div>';
+  $('editor').innerHTML=h;
+}
+function sync(){
+  $('editor').querySelectorAll('[data-k]').forEach(function(el){draft[el.dataset.k]=el.value});
+  $('editor').querySelectorAll('[data-list]').forEach(function(el){
+    var n=el.dataset.list,i=+el.dataset.i;
+    if(el.dataset.f)draft[n][i][el.dataset.f]=el.value;else draft[n][i]=el.value;
+  });
+}
+$('editor').addEventListener('click',function(e){
+  var a=e.target.closest('[data-add]'),d=e.target.closest('[data-del]');
+  if(a){sync();var n=a.dataset.add;draft[n].push(LISTS[n]?clone(LISTS[n].blank):'');buildEditor()}
+  if(d){sync();draft[d.dataset.del].splice(+d.dataset.i,1);buildEditor()}
+});
+function toast(t){var el=$('toast');el.textContent=t;el.classList.add('show');setTimeout(function(){el.classList.remove('show')},2200)}
+$('saveBtn').onclick=function(){
+  sync();
+  draft.emails=draft.emails.filter(function(x){return x.trim()});
+  draft.languages=draft.languages.filter(function(x){return x.trim()});
+  D=clone(draft);
+  var ok=persist(D);render();toast(ok?'✔ Saved! Portfolio updated.':'Updated (could not save to browser storage)');
+};
+$('exportBtn').onclick=function(){sync();var b=new Blob([JSON.stringify(draft,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='portfolio-backup.json';a.click()};
+$('importBtn').onclick=function(){$('importFile').click()};
+$('importFile').onchange=function(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(){try{draft=Object.assign(clone(DEFAULT),JSON.parse(r.result));buildEditor();toast('Backup loaded – press Save')}catch(x){toast('Invalid backup file')}};r.readAsText(f);e.target.value=''};
+$('resetBtn').onclick=function(){if(confirm('Reset everything to the original CV data?')){try{localStorage.removeItem(KEY)}catch(e){}D=clone(DEFAULT);draft=clone(D);render();buildEditor();toast('Reset to original')}};
+
+/* ---------- 3D background: rotating particle globe + rings ---------- */
+var cv=$('bg3d'),ctx=cv.getContext('2d'),W,H,pts=[],stars=[],mx=0,my=0,rot=0;
+function size(){W=cv.width=innerWidth;H=cv.height=innerHeight}
+size();addEventListener('resize',size);
+addEventListener('mousemove',function(e){mx=(e.clientX/innerWidth-.5);my=(e.clientY/innerHeight-.5)});
+var N=innerWidth<700?260:520;
+for(var i=0;i<N;i++){var y=1-(i/(N-1))*2,r=Math.sqrt(1-y*y),t=i*2.399963;pts.push({x:Math.cos(t)*r,y:y,z:Math.sin(t)*r})}
+for(i=0;i<120;i++)stars.push({x:Math.random(),y:Math.random(),s:Math.random()*1.4+.3,p:Math.random()*6});
+function proj(x,y,z,ax,ay,R,cx,cy){
+  var c=Math.cos(ay),s=Math.sin(ay),x1=x*c+z*s,z1=-x*s+z*c;
+  c=Math.cos(ax);s=Math.sin(ax);var y1=y*c-z1*s,z2=y*s+z1*c;
+  var f=900/(900+z2*R);return{x:cx+x1*R*f,y:cy+y1*R*f,z:z2,f:f};
+}
+function frame(){
+  ctx.clearRect(0,0,W,H);
+  stars.forEach(function(s){var a=.3+.4*Math.sin(rot*3+s.p);ctx.fillStyle='rgba(233,238,248,'+a+')';ctx.fillRect(s.x*W,s.y*H,s.s,s.s)});
+  rot+=.004;
+  var R=Math.min(W,H)*(W<860?.38:.34),cx=W*(W<860?.5:.72),cy=H*.5;
+  var ax=.35+my*.5,ay=rot+mx*1.2,proj_=[];
+  pts.forEach(function(p){proj_.push(proj(p.x,p.y,p.z,ax,ay,R,cx,cy))});
+  ctx.lineWidth=.6;
+  for(var i=0;i<proj_.length;i+=2){
+    var a=proj_[i];
+    for(var j=i+1;j<Math.min(i+14,proj_.length);j+=3){
+      var b=proj_[j],dx=a.x-b.x,dy=a.y-b.y,d=dx*dx+dy*dy;
+      if(d<2800){ctx.strokeStyle='rgba(60,201,189,'+(.22*(1-d/2800))+')';ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}
+    }
+  }
+  proj_.forEach(function(p,i){
+    var al=.25+.6*((p.z+1)/2),gold=i%7===0;
+    ctx.fillStyle=gold?'rgba(217,180,90,'+al+')':'rgba(160,230,224,'+al*.8+')';
+    ctx.beginPath();ctx.arc(p.x,p.y,(gold?2.4:1.5)*p.f,0,6.283);ctx.fill();
+  });
+  /* orbit rings */
+  for(var k=0;k<3;k++){
+    ctx.beginPath();
+    for(var a2=0;a2<=64;a2++){var t2=a2/64*6.283,q=proj(Math.cos(t2)*1.35,Math.sin(t2)*.0,Math.sin(t2)*1.35,ax+k*.9,ay*(k%2?-1.4:1.4)+k,R,cx,cy);a2?ctx.lineTo(q.x,q.y):ctx.moveTo(q.x,q.y)}
+    ctx.strokeStyle=k===1?'rgba(60,201,189,.25)':'rgba(217,180,90,.25)';ctx.lineWidth=1;ctx.stroke();
+  }
+  requestAnimationFrame(frame);
+}
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches)frame();else{rot=1;frame=null}
+
 render();
-</script></body></html>
+})();
+</script>
+</body>
+</html>
